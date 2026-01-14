@@ -72,6 +72,6 @@ app.MapAdditionalIdentityEndpoints();
 
 // Seed Roles and Users
 await DbSeeder.Initialize(app.Services);
-await DbSeeder.SeedAdminUser.Initialize(app.Services);
+await DbSeeder.SeedAdminUser(app.Services);
 
 app.Run();

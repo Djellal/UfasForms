@@ -42,9 +42,8 @@ namespace ufasforms.Data
             }
         }
 
-        public static class SeedAdminUser
-        {
-            public static async Task Initialize(IServiceProvider serviceProvider)
+       
+            public static async Task SeedAdminUser(IServiceProvider serviceProvider)
             {
                 using var scope = serviceProvider.CreateScope();
                 var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
@@ -90,4 +89,4 @@ namespace ufasforms.Data
             }
         }
     }
-}
+
