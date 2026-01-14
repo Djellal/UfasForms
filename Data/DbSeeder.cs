@@ -10,10 +10,10 @@ namespace ufasforms.Data
             var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
             var userManager = scope.ServiceProvider.GetRequiredService<UserManager<ApplicationUser>>();
 
-            string[] roleNames = { "Admin", "FacAdmin", "Student" };
+            
 
             // 1. Seed Roles
-            foreach (var roleName in roleNames)
+            foreach (var roleName in Constants.roleNames.ToList())
             {
                 if (!await roleManager.RoleExistsAsync(roleName))
                 {

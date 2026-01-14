@@ -26,6 +26,9 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlite(connectionString));
 
+builder.Services.AddDbContextFactory<ApplicationDbContext>(options =>
+    options.UseSqlite(connectionString), ServiceLifetime.Scoped);
+
 builder.Services.AddQuickGridEntityFrameworkAdapter();
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
